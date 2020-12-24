@@ -29,6 +29,11 @@ def render_vars():
                                      'Indonesia': 'Jakarta'})
 
 
+@app.route('/static-files')
+def render_page_w_static_files():
+    return render_template('static-files.html')
+
+
 #  request to '/' results in render_main() run
 @app.route('/')
 def render_main():
