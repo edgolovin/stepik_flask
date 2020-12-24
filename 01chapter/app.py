@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -15,14 +15,25 @@ def render_products(product_id=0, product_price='unknown'):
 
 @app.route('/about/')
 def render_about():
-    return 'About the project'
+    return render_template('about.html', adj='shiny', noun='国家')
 
 
-#  request to '/' results in hello() run
+# render vars, list, dict in template
+@app.route('/vars/')
+def render_vars():
+    return render_template('vars.html',
+                           some_var='小猪佩奇',
+                           rgb=['red', 'green', 'blue'],
+                           capitals={'China': 'Beijing',
+                                     'Paraguay': 'Asunción',
+                                     'Indonesia': 'Jakarta'})
+
+
+#  request to '/' results in render_main() run
 @app.route('/')
 def render_main():
     print('this text goes to console')
-    return 'Science, bitch!'
+    return render_template("main.html")
 
 
 # set up Flask to listen to the port
