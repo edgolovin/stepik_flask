@@ -9,9 +9,10 @@ def render_departures(departure='Limpopo'):
     return f'Departures page\nMain departure of all times: {departure}'
 
 
+@app.route('/tours/')
 @app.route('/tours/<int:id>')
-def render_tours():
-    return 'Tours page'
+def render_tours(tour_id=0):
+    return f'Tours page\nYou are looking at tour {tour_id}'
 
 
 #  request to '/' results in render_main() run
