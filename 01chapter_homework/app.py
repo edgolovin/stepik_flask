@@ -6,20 +6,18 @@ app = Flask(__name__)
 @app.route('/departures/')
 @app.route('/departures/<departure>/')
 def render_departures(departure='Limpopo'):
-    return f'Departures page\nMain departure of all times: {departure}'
+    return render_template("departure.html")
 
 
 @app.route('/tours/')
-@app.route('/tours/<int:id>')
+@app.route('/tours/<int:tour_id>')
 def render_tours(tour_id=0):
-    return f'Tours page\nYou are looking at tour {tour_id}'
+    return render_template("tour.html")
 
 
-#  request to '/' results in render_main() run
 @app.route('/')
 def render_main():
-    # return render_template("main.html")
-    return 'Main page'
+    return render_template("index.html")
 
 
 def main():
