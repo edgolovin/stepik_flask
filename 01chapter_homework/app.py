@@ -72,7 +72,7 @@ def render_tour(tour_id=0):
 
 
 def main():
-    app.run('localhost', 8000)
+    app.run('localhost', 8000, debug=True)
 
 
 if __name__ == '__main__':
