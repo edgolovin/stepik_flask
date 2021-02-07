@@ -6,7 +6,11 @@
 </head>
 <body>
 <header>
-    <nav>menu</nav>
+    {% for link in menu_links %}
+    <nav>
+        <a href="/{{ link.link }}/">{{ link.title }}</a>
+    </nav>
+    {% endfor %}
 </header>
 
 <div class="container">
