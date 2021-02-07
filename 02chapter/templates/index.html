@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block container %}
+{{ super() }}
+<p>Кусок, попадающий в базовый шаблон из шаблона index.html, наследующего base.html</p>
+   <div class="content">
+     <h2>Videos</h2>
+     <div class="videos">
+        (list of videos)
+     </div>
+    </div>
+
+{% endblock %}

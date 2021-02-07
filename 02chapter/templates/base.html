@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Peculiar title</title>
+</head>
+<body>
+<header>
+    <nav>menu</nav>
+</header>
+
+<div class="container">
+    {% block container %}
+    блок на замену, но может быть оставлен методом `super()` в наследующем шаблоне
+    {% endblock %}
+</div>
+
+<footer>
+    site footer
+</footer>
+</body>
+</html>
