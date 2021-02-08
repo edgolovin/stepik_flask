@@ -245,3 +245,5 @@ tours = {
     }
 
 }
+
+tours_ids = list(range(1, len(tours) + 1))
