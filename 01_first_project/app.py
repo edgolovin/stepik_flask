@@ -4,9 +4,12 @@ import data
 app = Flask(__name__)
 
 
-@app.route('/departures/<departure>/')
+@app.route('/<departure>/')
 def render_departures(departure):
-    return render_template("departure.html", departure=departure)
+    if departure in data.departures.keys():
+        return render_template("departure.html", departure=departure)
+    else:
+        return render_template("no_departure.html")
 
 
 @app.route('/tours/<int:tour_id>')
