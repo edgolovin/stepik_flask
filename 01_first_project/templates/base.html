@@ -21,11 +21,11 @@
                 {% for dep, title in data.departures.items() %}
                     {% if request.path == dep %}
                     <li class="nav-item active">
-                        <a class="nav-link" href="/{{dep}}/">{{ title }}</a>
+                        <a class="nav-link" href="/{{dep}}/">{{ title.title() }}</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/{{dep}}/">{{ title }}</a>
+                        <a class="nav-link" href="/{{dep}}/">{{ title.title() }}</a>
                     </li>
                     {% endif %}
                 {% endfor %}
