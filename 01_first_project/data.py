@@ -247,3 +247,13 @@ tours = {
 }
 
 tours_ids = list(range(1, len(tours) + 1))
+
+tours_by_departure = dict()
+
+for i in range(1, len(tours) + 1):
+    key = tours[i]['departure']
+    if key in tours_by_departure:
+        tours_by_departure[key] += [i]
+    else:
+        tours_by_departure[key] = [i]
+
